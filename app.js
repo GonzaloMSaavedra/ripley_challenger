@@ -6,7 +6,9 @@ let bodyParser = require('body-parser')
 const obtienedatosRoutes = require('./routes/obtieneDatos');
 
 
-
+//EJECUTA FUNCION QUE GUARDA LONGITUD Y LATITUD AL INICIAR LA APLICACION
+let obtieneDatosController = require('./controllers/obtieneDatosController');
+obtieneDatosController.obtieneData;
 //
 
 //CONTROL DE ACCESO
