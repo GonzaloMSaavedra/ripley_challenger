@@ -8,7 +8,7 @@ const obtienedatosRoutes = require('./routes/obtieneDatos');
 
 //EJECUTA FUNCION QUE GUARDA LONGITUD Y LATITUD AL INICIAR LA APLICACION
 let obtieneDatosController = require('./controllers/obtieneDatosController');
-obtieneDatosController.obtieneData;
+obtieneDatosController.guardaCordenadas;
 //
 
 //CONTROL DE ACCESO
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 //SOLO PARA LA CONSOLA
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 //ROUTER (EN ESTE CASO SOLO OCUPAREOS UNO PARA TODAS LOS REQUEST)
 app.use('/obtienedatos', obtienedatosRoutes)
