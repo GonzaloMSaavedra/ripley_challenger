@@ -5,7 +5,7 @@ const router = express.Router();
 var getJSON = require('get-json');
 //PARTE PARA CONECTAR CON REDIS 
 var redis = require('redis');
-var client = redis.createClient('redis://rediscloud:eDN0iWot7vDvpvs09EeLlIGFrCTYKFAA@redis-18724.c10.us-east-1-3.ec2.cloud.redislabs.com:18724', {no_ready_check: true});
+var client = redis.createClient(process.env.REDISCLOUD_URL, {no_ready_check: true});
 
 //ESTA FUNCION SE EJECUTA DESDE EL APP.JS AL INICAR LA APLICACION Y GUARDA LA LATITUD Y LONGITUD EN REDIS
 exports.guardaCordenadas = function (req, res){
