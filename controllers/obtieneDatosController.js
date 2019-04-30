@@ -4,8 +4,7 @@ const moment = require("moment");
 const router = express.Router();
 var getJSON = require('get-json');
 //PARTE PARA CONECTAR CON REDIS 
-let redis = require('redis');
-let client = redis.createClient('redis://h:p9786de2ba8a00ba5b14369a3beede3722c06f64fa5a90e12b284d7178148914c@ec2-3-214-196-85.compute-1.amazonaws.com:22919');
+var client = require('redis').createClient(process.env.REDIS_URL);
 
 
 //ESTA FUNCION SE EJECUTA DESDE EL APP.JS AL INICAR LA APLICACION Y GUARDA LA LATITUD Y LONGITUD EN REDIS
@@ -20,12 +19,12 @@ exports.obtieneData = function (req, res){
 	let Georgia = '32.6581671,-85.4214789';
 
 	//GUARDAMOS LATITUS Y LONGITUD EN REDIS
-	client.set('Santiago', santiago, redis.print);
-	client.set('Zurich', Zurich, redis.print);
+	client.set('Santiago', santiago);
+	client.set('Zurich', Zurich);
 	client.set('Auckland', Auckland, redis.print);
-	client.set('Sydney', Sydney, redis.print);
-	client.set('Londres', Londres, redis.print);
-	client.set('Georgia', Georgia, redis.print);
+	client.set('Sydney', Sydney);
+	client.set('Londres', Londres);
+	client.set('Georgia', Georgia);
 
 };
 
@@ -36,13 +35,13 @@ exports.obtieneDatosCiudad = function (req, res){
 
 	client.get(nombreCiudad, function (error, result) {
 
-
+console.log(result);
 		getJSON('https://api.darksky.net/forecast/de06e7742ef77b3ec85d6186a71325e1/'+result, function(error, response){
 		 
 					if (error) {
 		        // GUARDA EL ERROR CUANDO OBTIENE LA CORDENADA
-		        client.set('api.errors', moment(), error);
-		        throw error;
+		        //client.set('api.errors', moment(), error);
+		        //throw error;
 	        }
 
 		    res.status(200).json({
