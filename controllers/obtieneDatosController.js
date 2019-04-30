@@ -25,7 +25,7 @@ exports.obtieneData = function (req, res){
 	client.set('Sydney', Sydney, redis.print);
 	client.set('Londres', Londres, redis.print);
 	client.set('Georgia', Georgia, redis.print);
-
+	res.status(200);
 };
 
 
