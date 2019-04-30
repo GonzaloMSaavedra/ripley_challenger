@@ -8,7 +8,7 @@ var redis = require('redis');
 var client = redis.createClient('redis://rediscloud:eDN0iWot7vDvpvs09EeLlIGFrCTYKFAA@redis-18724.c10.us-east-1-3.ec2.cloud.redislabs.com:18724', {no_ready_check: true});
 
 //ESTA FUNCION SE EJECUTA DESDE EL APP.JS AL INICAR LA APLICACION Y GUARDA LA LATITUD Y LONGITUD EN REDIS
-exports.obtieneData = function (req, res){
+exports.guardaCordenadas = function (req, res){
 
 	//DEFINIMOS EN DURO LOS DATOS DE LATITUS Y LONGITUD, PARA DESPUES CONCATENAR A LA URL FINAL
 	let santiago = '-33.4727092,-70.7699143';
