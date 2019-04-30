@@ -19,12 +19,12 @@ exports.obtieneData = function (req, res){
 	let Georgia = '32.6581671,-85.4214789';
 
 	//GUARDAMOS LATITUS Y LONGITUD EN REDIS
-	client.set('Santiago', santiago);
-	client.set('Zurich', Zurich);
+	client.set('Santiago', santiago, redis.print);
+	client.set('Zurich', Zurich, redis.print);
 	client.set('Auckland', Auckland, redis.print);
-	client.set('Sydney', Sydney);
-	client.set('Londres', Londres);
-	client.set('Georgia', Georgia);
+	client.set('Sydney', Sydney, redis.print);
+	client.set('Londres', Londres, redis.print);
+	client.set('Georgia', Georgia, redis.print);
 
 };
 
