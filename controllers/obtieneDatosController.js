@@ -7,9 +7,11 @@ var getJSON = require('get-json');
 var redis = require('redis');
 var client = redis.createClient('redis://rediscloud:eDN0iWot7vDvpvs09EeLlIGFrCTYKFAA@redis-18724.c10.us-east-1-3.ec2.cloud.redislabs.com:18724', {no_ready_check: true});
 
-//ESTA FUNCION SE EJECUTA DESDE EL APP.JS AL INICAR LA APLICACION Y GUARDA LA LATITUD Y LONGITUD EN REDIS
-exports.obtieneData = function (req, res){
+ 
 
+exports.obtieneDatosCiudad = function (req, res){
+
+	
 	//DEFINIMOS EN DURO LOS DATOS DE LATITUS Y LONGITUD, PARA DESPUES CONCATENAR A LA URL FINAL
 	let santiago = '-33.4727092,-70.7699143';
 	let Zurich = '47.3774337,8.4666757';
@@ -25,11 +27,6 @@ exports.obtieneData = function (req, res){
 	client.set('Sydney', Sydney, redis.print);
 	client.set('Londres', Londres, redis.print);
 	client.set('Georgia', Georgia, redis.print);
-	res.status(200);
-};
-
-
-exports.obtieneDatosCiudad = function (req, res){
 
     let nombreCiudad = req.params.ciudad;
 
