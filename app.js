@@ -8,10 +8,8 @@ const obtienedatosRoutes = require('./routes/obtieneDatos');
 
 //EJECUTA FUNCION QUE GUARDA LONGITUD Y LATITUD AL INICIAR LA APLICACION
 let obtieneDatosController = require('./controllers/obtieneDatosController');
-obtieneDatosController.guardaCordenadas;
+//obtieneDatosController.guardaCordenadas;
 //
-
-
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
