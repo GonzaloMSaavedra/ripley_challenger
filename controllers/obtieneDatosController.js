@@ -4,7 +4,8 @@ const moment = require("moment");
 const router = express.Router();
 var getJSON = require('get-json');
 //PARTE PARA CONECTAR CON REDIS 
-
+let redis = require('redis');
+let client = redis.createClient(22919,'ec2-3-214-196-85.compute-1.amazonaws.com');
 
 
 //ESTA FUNCION SE EJECUTA DESDE EL APP.JS AL INICAR LA APLICACION Y GUARDA LA LATITUD Y LONGITUD EN REDIS
