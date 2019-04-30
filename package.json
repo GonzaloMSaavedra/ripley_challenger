@@ -2,7 +2,7 @@
   "name": "ripley_challenger",
   "version": "1.0.0",
   "description": "Api Rest desafio ripley con Dark Sky y Redis",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
