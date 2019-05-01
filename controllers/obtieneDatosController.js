@@ -36,7 +36,7 @@ exports.obtieneDatosCiudad = function (req, res){
 	client.get(nombreCiudad, function (error, result) {
 
 console.log(result);
-		getJSON('https://api.darksky.net/forecast/71685d490f32947c6b498c401340ffab/'+result, function(error, response){
+		getJSON('https://api.darksky.net/forecast/7c116f8d4b37be2c7d9e2c2bd9218cf9/'+result, function(error, response){
 		 
 					if (error) {
 		        // GUARDA EL ERROR CUANDO OBTIENE LA CORDENADA
